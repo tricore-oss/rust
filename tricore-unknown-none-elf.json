@@ -1,0 +1,24 @@
+{
+  "arch": "tricore",
+  "atomic-cas": true,
+  "cpu": "tc162",
+  "crt-objects-fallback": "false",
+  "data-layout": "e-m:e-p:32:32-i64:64-n32-S128",
+  "eh-frame-header": false,
+  "emit-debug-gdb-scripts": false,
+  "features": "",
+  "linker": "lld",
+  "linker-flavor": "gnu-lld",
+  "llvm-abiname": "ilp32",
+  "llvm-target": "tricore",
+  "max-atomic-width": 32,
+  "metadata": {
+    "description": "Bare Tricore (TC162 ISA)",
+    "host_tools": false,
+    "std": false,
+    "tier": 2
+  },
+  "panic-strategy": "abort",
+  "relocation-model": "static",
+  "target-pointer-width": "32"
+}

@@ -1,0 +1,33 @@
+use crate::spec::{
+    Cc, LinkerFlavor, Lld, PanicStrategy, RelocModel, Target, TargetMetadata, TargetOptions,
+};
+
+pub(crate) fn target() -> Target {
+    Target {
+        data_layout: "e-m:e-p:32:32-i64:64-n32-S128".into(),
+        llvm_target: "tricore".into(),
+        metadata: TargetMetadata {
+            description: Some("Bare Tricore".into()),
+            tier: Some(3),
+            host_tools: Some(false),
+            std: Some(false),
+        },
+        pointer_width: 32,
+        arch: "tricore".into(),
+
+        options: TargetOptions {
+            linker_flavor: LinkerFlavor::Gnu(Cc::No, Lld::Yes),
+            linker: Some("rust-lld".into()),
+            cpu: "tc162".into(),
+            max_atomic_width: Some(32),
+            atomic_cas: true,
+            features: "".into(),
+            llvm_abiname: "eabi".into(),
+            panic_strategy: PanicStrategy::Abort,
+            relocation_model: RelocModel::Static,
+            emit_debug_gdb_scripts: false,
+            eh_frame_header: false,
+            ..Default::default()
+        },
+    }
+}
