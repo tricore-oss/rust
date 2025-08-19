@@ -56,6 +56,7 @@ impl AbiMap {
             "msp430" => Arch::Msp430,
             "nvptx64" => Arch::Nvptx,
             "riscv32" | "riscv64" => Arch::Riscv,
+            "tricore" => Arch::Tricore,
             "x86" => Arch::X86,
             "x86_64" => Arch::X86_64,
             _ => Arch::Other,
@@ -196,6 +197,7 @@ enum Arch {
     Riscv,
     X86,
     X86_64,
+    Tricore,
     /// Architectures which don't need other considerations for ABI lowering
     Other,
 }

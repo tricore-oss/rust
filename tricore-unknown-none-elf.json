@@ -3,7 +3,7 @@
   "atomic-cas": true,
   "cpu": "tc162",
   "crt-objects-fallback": "false",
-  "data-layout": "e-m:e-p:32:32-i64:64-n32-S128",
+  "data-layout": "e-p:32:32-S64-i64:32:64-f64:32:64-a:0:32-n32",
   "eh-frame-header": false,
   "emit-debug-gdb-scripts": false,
   "features": "",

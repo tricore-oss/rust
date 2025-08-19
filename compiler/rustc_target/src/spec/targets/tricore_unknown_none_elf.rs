@@ -4,7 +4,7 @@ use crate::spec::{
 
 pub(crate) fn target() -> Target {
     Target {
-        data_layout: "e-m:e-p:32:32-i64:64-n32-S128".into(),
+        data_layout: "e-p:32:32-S64-i64:32:64-f64:32:64-a:0:32-n32".into(),
         llvm_target: "tricore".into(),
         metadata: TargetMetadata {
             description: Some("Bare Tricore".into()),
@@ -22,7 +22,6 @@ pub(crate) fn target() -> Target {
             max_atomic_width: Some(32),
             atomic_cas: true,
             features: "".into(),
-            llvm_abiname: "eabi".into(),
             panic_strategy: PanicStrategy::Abort,
             relocation_model: RelocModel::Static,
             emit_debug_gdb_scripts: false,
